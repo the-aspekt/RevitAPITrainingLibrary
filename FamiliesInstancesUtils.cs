@@ -1,6 +1,7 @@
 ﻿using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
+using System.Diagnostics;
 
 
 namespace RevitAPITrainingLibrary
@@ -69,6 +70,11 @@ namespace RevitAPITrainingLibrary
             {
                 return false;
             }
+        }
+        public static XYZ GetElementCenter(Element elem)
+        {
+            BoundingBoxXYZ bounding = elem.get_BoundingBox(null);
+            return (bounding.Max + bounding.Min) / 2;
         }
 
     }
