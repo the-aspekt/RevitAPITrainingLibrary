@@ -51,6 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryUtils.cs" />
+    <Compile Include="RoofsUtils.cs" />
+    <Compile Include="WindowsUtils.cs" />
+    <Compile Include="DoorsUtils.cs" />
     <Compile Include="RoomUtils.cs" />
     <Compile Include="FamiliesInstancesUtils.cs" />
     <Compile Include="FamiliesUtils.cs" />
