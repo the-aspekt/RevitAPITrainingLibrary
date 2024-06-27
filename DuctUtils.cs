@@ -36,5 +36,14 @@ namespace RevitAPITrainingLibrary
             return systemTypes;
         }
 
+        public static List<Duct> GetElements(Autodesk.Revit.DB.Document doc)
+        {
+            List<Duct> ducts = new FilteredElementCollector(doc)
+                                       .OfClass(typeof(Duct))
+                                       .Cast<Duct>()
+                                       .ToList();
+            return ducts;
+        }
+
     }
 }

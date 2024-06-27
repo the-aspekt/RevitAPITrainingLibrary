@@ -1,4 +1,5 @@
 ﻿using Autodesk.Revit.DB;
+using Autodesk.Revit.DB.Mechanical;
 using Autodesk.Revit.DB.Plumbing;
 using Autodesk.Revit.UI;
 using System;
@@ -18,6 +19,14 @@ namespace RevitAPITrainingLibrary
                                                         .Cast<PipingSystemType>()
                                                         .ToList();
             return pipingSystemTypes;
+        }
+        public static List<Pipe> GetElements(Autodesk.Revit.DB.Document doc)
+        {
+            List<Pipe> pipes = new FilteredElementCollector(doc)
+                                       .OfClass(typeof(Pipe))
+                                       .Cast<Pipe>()
+                                       .ToList();
+            return pipes;
         }
     }
 }

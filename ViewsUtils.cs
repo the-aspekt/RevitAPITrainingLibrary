@@ -20,6 +20,17 @@ namespace RevitAPITrainingLibrary
                    .ToList();
             return views;
         }
+        public static List<View3D> Get3DViews(Document doc)
+        {
+            var views
+               = new FilteredElementCollector(doc)
+                   .OfClass(typeof(View3D))
+                   .Cast<View3D>()
+                   .Where(p => !p.IsTemplate)
+                   .ToList();
+            return views;
+        }
+
         public static List<ViewFamilyType> GetViewFamilyTypes(Document doc)
         {
             var views
